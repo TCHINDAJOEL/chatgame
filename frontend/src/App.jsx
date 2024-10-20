@@ -63,46 +63,48 @@ function App() {
 
   return (
     <div className='h-screen flex flex-col items-center justify-center'>
-      <div className='flex justify-center'>
-        {clickedButton !== '/game/tetris' && (
-          <button onClick={() => handleGameClick('/game/tetris')} className='btn glass btn-primary'>
-            TETRIS
-          </button>
-        )}
-        {clickedButton !== '/game/pong' && (
-          <button onClick={() => handleGameClick('/game/pong')} className='btn glass btn-accent ml-5'>
-            PONG
-          </button>
-        )}
-        {clickedButton !== '/game/snake' && (
-          <button onClick={() => handleGameClick('/game/snake')} className='btn glass btn-warning ml-5'>
-            SNAKE
-          </button>
-        )}
-        {clickedButton !== '/game/memory' && (
-          <button onClick={() => handleGameClick('/game/memory')} className='btn glass btn-info ml-5'>
-            Memory Card
-          </button>
-        )}
-        {clickedButton !== '/game/2048' && (
-          <button onClick={() => handleGameClick('/game/2048')} className='btn glass btn-secondary ml-5'>
-            2048
-          </button>
-        )}
-        {clickedButton !== '/game/whack' && (
-          <button onClick={() => handleGameClick('/game/whack')} className='btn glass btn-error ml-5'>
-            Whack-a-Mole
-          </button>
-        )}
-        {clickedButton && (
-          <button
-            onClick={() => navigate('/')}
-            className='btn btn-outline btn-success ml-5'
-          >
-            Retour au Chat
-          </button>
-        )}
-      </div>
+      {authUser && (
+        <div className='flex justify-center'>
+          {clickedButton !== '/game/tetris' && (
+            <button onClick={() => handleGameClick('/game/tetris')} className='btn glass btn-primary'>
+              TETRIS
+            </button>
+          )}
+          {clickedButton !== '/game/pong' && (
+            <button onClick={() => handleGameClick('/game/pong')} className='btn glass btn-accent ml-5'>
+              PONG
+            </button>
+          )}
+          {clickedButton !== '/game/snake' && (
+            <button onClick={() => handleGameClick('/game/snake')} className='btn glass btn-warning ml-5'>
+              SNAKE
+            </button>
+          )}
+          {clickedButton !== '/game/memory' && (
+            <button onClick={() => handleGameClick('/game/memory')} className='btn glass btn-info ml-5'>
+              Memory Card
+            </button>
+          )}
+          {clickedButton !== '/game/2048' && (
+            <button onClick={() => handleGameClick('/game/2048')} className='btn glass btn-secondary ml-5'>
+              2048
+            </button>
+          )}
+          {clickedButton !== '/game/whack' && (
+            <button onClick={() => handleGameClick('/game/whack')} className='btn glass btn-error ml-5'>
+              Whack-a-Mole
+            </button>
+          )}
+          {clickedButton && (
+            <button
+              onClick={() => navigate('/')}
+              className='btn btn-outline btn-success ml-5'
+            >
+              Retour au Chat
+            </button>
+          )}
+        </div>
+      )}
       <Routes>
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/login"} />} />
         <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
