@@ -1,0 +1,158 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('path/to/your/background-image.jpg'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Cela couvre tout le corps de la page */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+#game-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#game-board {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.tile {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #776e65;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tile[data-value="2"] {
+    background-color: #eee4da; /* Couleur d'arrière-plan pour 2 */
+    color: #776e65; /* Couleur du texte pour 2 */
+}
+
+.tile[data-value="4"] {
+    background-color: #ede0c8; /* Couleur d'arrière-plan pour 4 */
+    color: #776e65; /* Couleur du texte pour 4 */
+}
+
+.tile[data-value="8"] {
+    background-color: #f2b179; /* Couleur d'arrière-plan pour 8 */
+    color: white; /* Couleur du texte pour 8 */
+}
+
+.tile[data-value="16"] {
+    background-color: #f59563; /* Couleur d'arrière-plan pour 16 */
+    color: white; /* Couleur du texte pour 16 */
+}
+
+.tile[data-value="32"] {
+    background-color: #f67c5f; /* Couleur d'arrière-plan pour 32 */
+    color: white; /* Couleur du texte pour 32 */
+}
+
+.tile[data-value="64"] {
+    background-color: #f65e3b; /* Couleur d'arrière-plan pour 64 */
+    color: white; /* Couleur du texte pour 64 */
+}
+
+.tile[data-value="128"] {
+    background-color: #edcf72; /* Couleur d'arrière-plan pour 128 */
+    color: white; /* Couleur du texte pour 128 */
+}
+
+.tile[data-value="256"] {
+    background-color: #edcc61; /* Couleur d'arrière-plan pour 256 */
+    color: white; /* Couleur du texte pour 256 */
+}
+
+.tile[data-value="512"] {
+    background-color: #edc850; /* Couleur d'arrière-plan pour 512 */
+    color: white; /* Couleur du texte pour 512 */
+}
+
+.tile[data-value="1024"] {
+    background-color: #edc53f; /* Couleur d'arrière-plan pour 1024 */
+    color: white; /* Couleur du texte pour 1024 */
+}
+
+.tile[data-value="2048"] {
+    background-color: #edc22e; /* Couleur d'arrière-plan pour 2048 */
+    color: white; /* Couleur du texte pour 2048 */
+}
+
+#leaderboard {
+    width: 400px;
+    margin-top: 20px;
+}
+
+#leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#leaderboard-table th, #leaderboard-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#leaderboard-table th {
+    background-color: #8f7a66;
+    color: white;
+}
+
+#leaderboard-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#leaderboard-table tr:hover {
+    background-color: #ddd;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}

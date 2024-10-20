@@ -1,0 +1,55 @@
+/* style.css */
+* {
+  box-sizing: border-box; /* Assure que le padding et la bordure sont inclus dans la largeur et la hauteur */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime le padding par défaut */
+}
+
+body {
+  display: flex; /* Utilise Flexbox pour centrer le contenu */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  /*background-color: #f0f0f0;*/ /* Couleur de fond */
+  font-family: 'Arial', sans-serif; /* Police de caractères */
+}
+
+h1 {
+  position: absolute; /* Positionne le titre */
+  top: 20px; /* Espace du haut */
+  color: red; /* Couleur du texte */
+  text-transform: uppercase; /* Met le texte en majuscules */
+  text-decoration: underline; /* Souligne le texte */
+}
+
+.memory-game {
+  display: flex; /* Utilise Flexbox pour les cartes */
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne */
+  justify-content: space-between; /* Espace entre les cartes */
+  width: 640px; /* Largeur totale du jeu */
+}
+
+.memory-card {
+  width: calc(25% - 10px); /* Largeur de chaque carte */
+  height: 150px; /* Hauteur de chaque carte */
+  position: relative; /* Position relative pour le positionnement des images */
+  transform: scale(1); /* Échelle de la carte */
+  transition: transform 0.5s; /* Transition pour l'effet de retournement */
+  transform-style: preserve-3d; /* Préserve le style 3D lors des transformations */
+  margin-bottom: 10px; /* Espacement en bas */
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg); /* Rotation pour l'effet de retournement */
+}
+
+.memory-card img {
+  width: 100%; /* Largeur de l'image */
+  height: 100%; /* Hauteur de l'image */
+  position: absolute; /* Position absolue pour superposer les images */
+  backface-visibility: hidden; /* Cache l'arrière de l'image */
+}
+
+.front-face {
+  transform: rotateY(180deg); /* Retourne l'image de devant */
+}

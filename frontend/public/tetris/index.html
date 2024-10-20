@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris avec Phaser.js</title>
+    <style>
+       body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           /* background-color:red;  /* Si vous voulez un arrière-plan noir pour la page entière */
+            margin: 0;
+            padding: 0;
+            background-image: url('R.jpeg'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+            background-size: cover; /* Couvre toute la page */
+            background-repeat: no-repeat; /* Évite la répétition de l'image */
+            background-position: center center; /* Centre l'image */
+        }
+        canvas {
+            display: block;
+            margin: auto;
+        }
+        /* Style pour la fenêtre de jeu */
+        #game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 640px;
+            width: 320px;
+            background-color: #000;
+        }
+
+        .button-container {
+            display: flex; /* Activer flexbox pour aligner les boutons horizontalement */
+            justify-content: center; /* Centrer les boutons horizontalement dans le conteneur */
+            align-items: center; /* Centrer verticalement */
+            margin: 20px;
+        }
+
+        /* Style pour les boutons */
+        .menu-button {
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: red;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-button:hover {
+            background-color: #ffaaaa;
+        }
+
+        #leaderboard {
+            margin-top: 20px;
+        }
+        #lead{
+            position:absolute;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Formulaire pour entrer le nom du joueur -->
+    <div id="name-form">
+        <label for="player-name">Entrez votre nom : </label>
+        <input type="text" id="player-name" placeholder="Votre nom">
+        <button id="start-game" class="menu-button">Commencer le jeu</button>
+    </div>
+
+    <div id="game-container"></div>
+
+    <div id="lead">
+        <div id="leaderboard" style="color: white; font-size: 18px; margin-top: 20px;">
+
+            <!-- le classement sera affiché ici -->
+        </div>
+    </div>
+    
+    
+    <!-- Conteneur des boutons -->
+    <div class="button-container">
+        <!-- Boutons pour retourner à l'icône et au menu -->
+    <button class="menu-button" onclick="location.href='icon.html'">Retour à l'icône</button>
+    <button class="menu-button" onclick="location.href='game-page.html'">Retour au menu</button>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
+    <script src="game.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            getLeaderboard(); // Récupérer et afficher le leaderboard à chaque chargement
+        });
+    </script>
+
+    <script>
+        document.getElementById('start-game').addEventListener('click', () => {
+            const playerName = document.getElementById('player-name').value;
+            if (playerName) {
+                startGame(playerName); // Démarre le jeu avec le nom du joueur
+            } else {
+                alert('Veuillez entrer un nom pour jouer.');
+            }
+        });
+
+        function startGame(playerName) {
+            // Masquer le formulaire et afficher le jeu
+            document.getElementById('name-form').style.display = 'none';
+            document.getElementById('leaderboard').style.display = 'none';
+            document.getElementById('game-container').style.display = 'block';
+
+            // Initialise et démarre le jeu avec le nom du joueur
+            initGame(playerName);
+        }
+    </script>
+</body>
+</html>
+
+

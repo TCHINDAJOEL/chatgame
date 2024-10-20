@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="Game2048.css"> <!-- Chemin d'accès relatif au fichier CSS -->
+</head>
+<body>
+
+    <div id="header">
+        <div id="player-info">Joueur : <span id="player-name-display"></span></div>
+        <div id="score-box">
+            <div>Score</div>
+            <div id="score">0</div>
+        </div>
+        <div id="highscore-box">
+            <div>Score élevé</div>
+            <div id="highscore">0</div>
+        </div>
+        <button id="restart">Redémarrage</button>
+    </div>
+
+    <div id="game-container"> <!-- Nouveau conteneur pour le jeu et le leaderboard -->
+        <div id="game-board">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+
+        <div id="leaderboard"> <!-- Le leaderboard à côté du tableau -->
+            <h2>Meilleurs scores</h2>
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Joueur</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les scores des joueurs seront ajoutés ici dynamiquement -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="game-message" class="hidden">
+        <p id="message-text"></p>
+        <button id="continue"> Pas Mal</button>
+    </div>
+
+    <script src="game.js"></script> <!-- Chemin d'accès relatif au fichier JS -->
+</body>
+</html>
