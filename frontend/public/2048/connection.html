@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css">
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="welcome-container bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+<body class="flex items-center justify-center min-h-screen"> <!-- Enlever le background -->
+    <div class="welcome-container p-8 rounded-lg shadow-lg w-full max-w-md">
         <h1 class="text-2xl font-bold mb-4 text-center">Bienvenue sur la Plateforme de Jeux</h1>
         <form id="player-form" class="space-y-4">
             <div>
@@ -20,6 +20,12 @@
     </div>
 
     <script>
+        // Récupérer le nom du joueur depuis le localStorage
+        const playerName = localStorage.getItem('playerName') || "";
+        
+        // Pré-remplir le champ de saisie avec le nom du joueur
+        document.getElementById('player-name').value = playerName;
+
         document.getElementById('player-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const playerName = document.getElementById('player-name').value;

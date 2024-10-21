@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const playerName = localStorage.getItem('playerName') || "Anonyme"; // Récupérer le nom du joueur depuis le localStorage
+
     const gameBoard = document.getElementById("game-board");
     const tiles = Array.from(document.getElementsByClassName("tile"));
     const scoreDisplay = document.getElementById("score");
@@ -140,10 +143,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function checkWinOrLose() {
         if (board.includes(2048)) {
             showMessage("You Win!");
-            saveScore(localStorage.getItem('playerName'), score);  // Sauvegarde le score après la victoire
+            saveScore(playerName, score);  // Sauvegarde le score après la victoire
         } else if (board.every(val => val !== 0) && !canMove()) {
             showMessage("Game Over!");
-            saveScore(localStorage.getItem('playerName'), score);  // Sauvegarde le score après la défaite
+            saveScore(playerName, score);  // Sauvegarde le score après la défaite
         }
     }
 

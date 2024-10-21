@@ -7,7 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: url('path/to/your/background-image.jpg'); /* Remplacez par le chemin de votre image */
+    /*background-image: url('path/to/your/background-image.jpg'); /* Remplacez par le chemin de votre image */
     background-size: cover; /* Cela couvre tout le corps de la page */
     background-position: center; /* Centre l'image */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
@@ -120,6 +120,7 @@ body {
 #leaderboard-table {
     width: 100%;
     border-collapse: collapse;
+    background: white;
 }
 
 #leaderboard-table th, #leaderboard-table td {
